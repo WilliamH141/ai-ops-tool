@@ -1,0 +1,29 @@
+curl -X POST https://william141.app.n8n.cloud/webhook-test/ai-ops \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "To-Do List",
+    "original": "barry still hasn’t sent the sponsor recap from last week — check if he needs help. AI demo is happening on the 10th at 2pm, but we might be double booked with strategy sync, grace needs to confirm. william to update the old onboarding doc by friday.",
+    "result": "Barry to send sponsor recap\nGrace to confirm strategy sync clash\nWilliam to update onboarding doc by Friday"
+  }'
+
+curl -X POST https://william141.app.n8n.cloud/webhook-test/ai-ops \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "TL;DR Summary",
+    "original": "just a quick note that barry was gonna send the sponsor recap but I haven’t seen it. and the AI demo is on the 10th. double check that it’s not double booked. thanks!",
+    "result": [
+      "Barry to send sponsor recap",
+      "Grace to confirm schedule",
+      "William to update onboarding doc"
+    ]
+  }'
+
+            st.write("🔍 Response:", res.text)
+
+              if res.status_code == 200:
+                st.success("✅ Sent to workflow!")
+            else:
+                st.error(f"❌ Failed to send: {res.status_code} - {res.text}")
+
+
+  
